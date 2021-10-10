@@ -1,0 +1,140 @@
+<!--
+ _    _ _     _ _               
+| |  | | |   (_) |              
+| |  | | |__  _| |_ ___ _   _   
+| |/\| | '_ \| | __/ _ \ | | |  
+\  /\  / | | | | ||  __/ |_| |_ 
+ \/  \/|_| |_|_|\__\___|\__, (_)
+                         __/ |  
+                        |___/   
+-->
+<html>
+<meta property="og:title" content="Whitey" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://whiteysite.xyz" />
+<meta property="og:image" content="https://whiteysite.xyz/favicon.ico" />
+<meta property="og:description" content="Personal Website" />
+<meta name="theme-color" content="#AE00FF">
+<meta name="twitter:card" content="summary_large_image">
+
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Whitey.</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <section>
+        <div class="content">
+            <h2>Whitey.</h2>
+            <h2>Whitey.</h2>
+        </div>
+    </section>
+    <a href="card.html">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Profile
+    </a>
+    <div class="loader-wrapper">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <h3>Loading...</h3>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        setTimeout(function () {
+            $(".loader-wrapper").fadeToggle();
+        }, 6000)
+    </script>
+    <script>
+        $(document).keydown(function (event) {
+            if (event.keyCode == 123) {
+                return false;
+            } else if ((event.ctrlKey && event.shiftKey && event.keyCode == 73) || (event.ctrlKey && event
+                    .shiftKey && event.keyCode == 74) || (event.ctrlKey && event.keyCode == 83) || (event
+                    .ctrlKey && event.keyCode == 75) || (event.ctrlKey && event.keyCode == 67) || (event
+                    .ctrlKey && event.keyCode == 9)) {
+                return false;
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var element = new Image;
+        var devtoolsOpen = false;
+        element.__defineGetter__("id", function () {
+            devtoolsOpen = true; // This only executes when devtools is open.
+            window.location.replace("https://www.youtube.com/watch?v=gOw3E0mW_ZA");
+        });
+        setInterval(function () {
+            devtoolsOpen = false;
+            console.log(element);
+            document.getElementById('output').innerHTML += (devtoolsOpen ? "roney" : "king");
+        }, 1);
+        element.__defineGetter__("id", function () {
+            devtoolsOpen = true;
+            while (1) location.reload(1)
+        });
+    </script>
+    <script>
+        (function () {
+            'use strict';
+            const devtools = {
+                isOpen: false,
+                orientation: undefined
+            };
+            const threshold = 160;
+            const emitEvent = (isOpen, orientation) => {
+                window.dispatchEvent(new CustomEvent('devtoolschange', {
+                    detail: {
+                        isOpen,
+                        orientation
+                    }
+                }));
+            };
+            const main = ({
+                emitEvents = true
+            } = {}) => {
+                const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+                const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+                const orientation = widthThreshold ? 'vertical' : 'horizontal';
+                if (
+                    !(heightThreshold && widthThreshold) &&
+                    ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) ||
+                        widthThreshold || heightThreshold)
+                ) {
+                    if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
+                        emitEvent(true, orientation);
+                    }
+                    devtools.isOpen = true;
+                    devtools.orientation = orientation;
+                    window.location.replace("https://www.youtube.com/watch?v=gOw3E0mW_ZA");
+                    while (1) location.reload(1)
+                } else {
+                    if (devtools.isOpen && emitEvents) {
+                        emitEvent(false, undefined);
+                    }
+                    devtools.isOpen = false;
+                    devtools.orientation = undefined;
+                }
+            };
+            main({
+                emitEvents: false
+            });
+            setInterval(main, 1);
+            if (typeof module !== 'undefined' && module.exports) {
+                module.exports = devtools;
+            } else {
+                window.devtools = devtools;
+            }
+        })();
+    </script>
+</body>
+
+</html>

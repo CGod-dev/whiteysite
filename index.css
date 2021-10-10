@@ -1,0 +1,259 @@
+/*
+ _    _ _     _ _               
+| |  | | |   (_) |              
+| |  | | |__  _| |_ ___ _   _   
+| |/\| | '_ \| | __/ _ \ | | |  
+\  /\  / | | | | ||  __/ |_| |_ 
+ \/  \/|_| |_|_|\__\___|\__, (_)
+                         __/ |  
+                        |___/   
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #262626;
+}
+.content{
+    position: relative;
+}
+.content h2{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 8em;
+}
+.content h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 0.1px #8a2be2;
+    outline: none;
+    text-shadow: 0 0 50px #8a2be2
+}
+.content h2:nth-child(2){
+    color: #8a2be2;
+    animation: animate 4s ease-in-out infinite;
+}
+a{
+    position: absolute;
+    top: 85%;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #8a2be2;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    text-shadow: 0 0 20px #8a2be2;
+    text-decoration: none;
+    font-size: 45px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+a:hover{
+    color: #220042;
+    background: #8a2be2;
+    box-shadow: 0 0 10px #7317c8, 0 0 40px #5300a1, 0 0 80px #c181fd;
+    transition-delay: 1s;
+}
+a span{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #921eff);
+}
+a:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+}
+a span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #921eff);
+}
+a:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #921eff);
+}
+a:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #921eff);
+}
+a:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+@keyframes animate {
+    0%,100% {
+        clip-path: polygon(0% 46%, 13% 44%, 26% 51%, 40% 60%, 56% 66%, 70% 67%, 87% 62%, 100% 59%, 100% 100%, 0% 100%);
+    }
+    50% {
+        clip-path: polygon(0 57%, 13% 64%, 29% 65%, 44% 62%, 60% 57%, 76% 49%, 90% 46%, 100% 48%, 100% 100%, 0% 100%);
+    }  
+}
+.loader-wrapper{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #262626;
+    z-index: 1;
+}
+.loader{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #1a1a1f;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: #fff;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.loader:hover{
+    background: #c181fd;
+    color: #050801;
+    box-shadow: 0 0 5px #c181fd,
+    0 0 25px #c181fd,
+    0 0 50px #c181fd,
+    0 0 200px #c181fd;
+}
+.loader span{
+    position: absolute;
+    display: block;
+}
+.loader span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #c181fd);
+    animation: animate1 2s linear infinite;
+    animation-delay: 0s;
+}
+@keyframes animate1 {
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+.loader span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #c181fd);
+    animation: animate2 2s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes animate2 {
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+.loader span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(270deg, transparent, #c181fd);
+    animation: animate3 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes animate3 {
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+.loader span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #c181fd);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1.5s;
+}
+@keyframes animate4 {
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+.loader h3{
+    font-family: consolas;
+    color: #c181fd;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    border-right: 1px solid #c181fd;
+    animation: typing 3s steps(10) infinite;
+}
+.loader:hover h3{
+    color: #1a1a1f;
+    border-right: 1px solid #1a1a1f;
+}
+@keyframes typing {
+        0%,90%,100%{
+            width: 0px;
+        }
+        30%{
+            width: 123.89px;
+        }
+}
+ /*@keyframes glow {
+    5%,15%,25%,35%,45%,55%,65%,75%,85%,95%{
+        color: transparent;
+        text-shadow: none;
+    }
+    10%,20%,30%,40%,50%,60%,70%,80%,90%,100%{
+        color: transparent;
+        text-shadow: 0 0 50px goldenrod;
+    }
+} */
