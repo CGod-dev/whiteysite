@@ -34,7 +34,7 @@ body{
 }
 .content h2:nth-child(1){
     color: transparent;
-    -webkit-text-stroke: 0.1px #8a2be2;
+    -webkit-text-stroke: 0.1vh #8a2be2;
     outline: none;
     text-shadow: 0 0 50px #8a2be2
 }
